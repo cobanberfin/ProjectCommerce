@@ -1,0 +1,47 @@
+﻿
+@model CartModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class=col-md-8>
+
+
+        <table class="table table-bordered  table table-hover">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Ürün İsmi</th>
+            <th>Fiyat</th>
+            <th>Miktar</th>
+           
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.CartItems)
+        {
+            <tr>
+                <th>
+                  <img src="~/img/@item.ImageUrl" width="90" />
+                </th>
+                <th>@item.Name</th>
+                <th>@item.Price</th>
+                <th>@item.Quantity</th>
+              <th>
+                  <button class="btn btn-danger btn-sm">
+                      <i class="fa fa-times fa-fw"></i>
+                  </button>
+              </th>
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+    </div>
+
+</div>
